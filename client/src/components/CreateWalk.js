@@ -18,7 +18,14 @@ function CreateWalk({bunnies, setBunnies}) {
   useEffect(() => {
     fetch("/paths")
         .then(r => r.json())
-        .then(data => setPaths(data))
+        .then(data =>{
+          const random = {
+            directions: "-",
+            id: 0,
+            name: "random"
+          }
+          setPaths([...data, random])}
+          )
   }, [])
 
   // Form validation schema
