@@ -31,7 +31,7 @@ function CreatePath(){
       })
 
     return(
-        <div><br/>
+        <div className="container"><br/><br/>
         new path!
         <br/>
         <form onSubmit={formik.handleSubmit}>
@@ -48,7 +48,7 @@ function CreatePath(){
                 placeholder = "path directions"
                 value = {formik.values.description}
                 onChange = {formik.handleChange}
-            /> <br/>
+            /> <br/><br/>
             
             <button type="submit">save</button>
         </form>

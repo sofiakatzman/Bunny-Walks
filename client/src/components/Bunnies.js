@@ -19,17 +19,18 @@ function Bunnies({bunnies, setBunnies}) {
   }
 
   return (
-    <>
+    <div className="container-bunnies">
+      Saved Bunnies
       {bunnies &&
         bunnies.map((bunny) => (
-          <div key={bunny.id}>
-            <h1>{bunny.name}</h1>
-            <h2>{bunny.description}</h2>
-            <img src={bunny.headshot} alt={`Headshot of ${bunny.name}`} />
-            <button onClick={() => handleDelete(bunny.id)}>delete</button>
+          <div key={bunny.id} className="card-bunnies">
+            <img className="card-bunnies-image" src={bunny.headshot} alt={`Headshot of ${bunny.name}`} />
+            <h1 className="name-bunnies">{bunny.name}</h1>
+            <h5 className="description-bunnies">{bunny.description}</h5>
+            <button className="delete" onClick={() => handleDelete(bunny.id)}>delete</button>
           </div>
         ))}
-    </>
+    </div>
   )
 }
 

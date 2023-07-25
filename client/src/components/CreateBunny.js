@@ -35,9 +35,8 @@ function CreateBunny(){
       })
 
     return(
-        <div><br/>
+        <div className="container"><br/>
         new bunny!
-        <br/>
         <form onSubmit={formik.handleSubmit}>
             <input
                 type = "text"
@@ -59,7 +58,7 @@ function CreateBunny(){
                 placeholder = "bunny photo url"
                 value = {formik.values.headshot}
                 onChange = {formik.handleChange}
-            /> <br/>
+            /> <br/><br/>
             <button type="submit">save</button>
         </form>
         {formik.errors && (

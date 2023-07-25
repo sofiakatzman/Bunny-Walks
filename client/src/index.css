@@ -1,7 +1,306 @@
-:root {
-  --bg: #282c34;
-  --header: #fff;
-  --link: #61dafb;
-  --text: hsla(0, 0%, 100%, 0.88);
+/* Global styles */
+body {
+  margin: 20px; /* Adjust the margin to control the spacing around the content */
+  font-family: 'Open Sans', sans-serif;
+  background-color: #ebe6e3;
+  color: #222;
+  padding-top: 80px;
 }
 
+/* Container styles */
+
+.container{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px 5px; /* Adjust the padding to control the spacing inside the containers */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px; /* Adjust the gap to control the spacing between the cards */
+  justify-items: center;
+  align-items: center;
+}
+.container-bunnies {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px 5px; /* Adjust the padding to control the spacing inside the containers */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px; /* Adjust the gap to control the spacing between the cards */
+  justify-items: center;
+  align-items: center;
+}
+
+.container-walks{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px 100px; /* Adjust the padding to control the spacing inside the containers */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 30px 1pc; /* Adjust the gap to control the spacing between the cards */
+  justify-items: center;
+  align-items: center;
+}
+
+
+.container-paths{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px 100px; /* Adjust the padding to control the spacing inside the containers */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 30px 1pc; /* Adjust the gap to control the spacing between the cards */
+  justify-items: center;
+  align-items: center;
+}
+
+
+/* Card styles */
+.card,
+.card-path, .card-walks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center the content */
+  align-items: center; /* Horizontally center the content */
+  width: 90%;
+  height: 100px;
+  background: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 1px 5px 30px rgba(150, 148, 190, 0.4);
+  animation: slideIn 0.5s ease-in-out;
+  transition: box-shadow 0.2s ease;
+  padding: 5px;
+}
+
+
+.card:hover {
+  box-shadow: 0 0 0 1px #33373c;
+}
+
+.card span,
+.card-path span {
+  font-weight: 600;
+  color: #222;
+  font-size: 16px;
+}
+
+.card p,
+.card-path p {
+  color: #444;
+  font-size: 12px;
+  padding-top: 3px;
+}
+
+img {
+  display: block;
+  margin: 10px auto;
+  width: 80px; /* Adjust the width for smaller images */
+  height: 80px; /* Adjust the height for smaller images */
+  padding-top: 10px;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  color: #222;
+  padding-top: 15px;
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+h4 {
+  font-size: 14px;
+}
+
+/* Paragraphs */
+p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+/* Buttons */
+button {
+  text-align: center;
+  background-color: #007bff;
+  border: none;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button.delete {
+  background-color:  #007bff;
+  padding: 3px 3px;
+
+}
+
+/* Navbar styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #f9f9f9;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.links a {
+  font-size: 16px;
+  margin-left: 20px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: #0056b3;
+}
+
+/* Additional styling for the form elements */
+input, textarea, select {
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+.card-bunnies {
+  width: 190px;
+  height: 350px;
+  background: white;
+  padding: .4em;
+  border-radius: 6px;
+}
+
+.card-bunnies-image {
+  /* background-color: rgb(236, 236, 236); */
+  width: 100%;
+  height: 60%;
+  border-radius: 6px 6px 0 0;
+}
+
+.card-bunnies-image:hover {
+  transform: scale(0.98);
+}
+
+.name-bunnies {
+  text-transform: uppercase;
+  font-size: 0.7em;
+  font-weight: 600;
+  color: rgb(63, 121, 230);
+  padding: 10px 7px 0;
+}
+
+.name-bunnies:hover {
+  cursor: pointer;
+}
+
+.description-bunnies {
+  font-weight: 600;
+  color: rgb(88, 87, 87);
+  padding: 7px;
+}
+
+.bunnies-description:hover {
+  cursor: pointer;
+}
+
+
+
+.card-walks {
+  width: 500px;
+  height: 150px;
+  background: white;
+  padding: .4em;
+  border-radius: 6px;
+}
+
+.card-walks-image {
+  width: 100%;
+  height: 60%;
+  border-radius: 6px 6px 0 0;
+}
+
+.card-walks-image:hover {
+  transform: scale(0.98);
+}
+
+.name-walks {
+  text-transform: uppercase;
+  font-size: 0.7em;
+  font-weight: 600;
+  color: rgb(63, 121, 230);
+  padding: 10px 7px 0;
+}
+
+.name-walks:hover {
+  cursor: pointer;
+}
+
+.description-walks {
+  font-weight: 600;
+  font-size: 0.7em;
+  color: rgb(88, 87, 87);
+  padding: 7px;
+}
+
+h1.count-walks{
+  font-weight: 600;
+  font-size: 1em;
+  color: rgb(88, 87, 87);
+  padding: 7px;
+}
+
+.name-paths {
+  text-transform: uppercase;
+  font-size: 0.7em;
+  font-weight: 600;
+  color: rgb(63, 121, 230);
+  padding: 10px 7px 0;
+}
+
+.description-paths {
+  font-weight: 600;
+  color: rgb(88, 87, 87);
+  padding: 7px;
+}
+
+.card-paths {
+  width: 500px;
+  height: 200px;
+  background: white;
+  padding: .4em;
+  border-radius: 6px;
+}

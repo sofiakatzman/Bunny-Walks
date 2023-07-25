@@ -29,18 +29,19 @@ function Walks(){
       }
 
     return(
-        <>
+        <div className="container-walks">
+          Walk Archive
         {walks && walks.map((walk)=> {
             return(
-                <div key={walk.id}>
-                    <h2>{walk.date} : {walk.bunny_count}</h2>
-                    <h3>Walk Time: {walk.start_time} - {walk.end_time}</h3>
-                    <h3>Walk Path: {walk.walk_path}</h3>
+                <div key={walk.id} className="card-walks">
+                    <h1 className="count-walks">{walk.bunny_count} bunnies seen!</h1>
+                    <h2 className="name-walks" >{walk.date} : {walk.start_time} - {walk.end_time}</h2>
+                    <h5 className="description-walks">Walk Path: {walk.walk_path}</h5>
                     <button onClick={() => handleDelete(walk.id)}>delete</button>
                 </div>
             )
         })}
-        </>
+        </div>
     )
 }
 

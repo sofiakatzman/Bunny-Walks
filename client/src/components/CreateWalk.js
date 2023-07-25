@@ -88,15 +88,16 @@ function CreateWalk({bunnies, setBunnies}) {
   // Display when a walk has not been started
   if (!walk) {
     return (
-      <div> <br/>
-        <button onClick={handleStartWalk}>Start Walk</button>
+      <div className="container"> <br/><br/><br/>
+      new walk!
+        <button onClick={handleStartWalk}>Start Walk</button> <br/>
       </div>
     )
   }
 
   // Display when a walk has been started
   return (
-    <div> <br/>
+    <div className="container-seen-bunnies"> <br/>
       <h2>{count} bunnies seen!</h2>
     
     {bunnies && <div>

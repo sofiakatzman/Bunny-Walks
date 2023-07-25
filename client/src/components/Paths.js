@@ -6,8 +6,8 @@ function Paths(){
     useEffect(()=>{
         fetch("/paths")
         .then(r => r.json())
-        .then(data =>setPaths(data))
-        console.log(paths)
+        .then(data =>{setPaths(data)})
+
     }, [])
 
     const handleDelete = (deleteID) => {
@@ -28,17 +28,17 @@ function Paths(){
       }
 
     return(
-        <>
+        <div className="container-paths">
         {paths && paths.map(path=> {
             return(
-                <div key={path.id}>
-                    <h2>{path.name}</h2>
-                    <h3>{path.directions}</h3>
-                    <button onClick={() => handleDelete(path.id)}>delete</button>
+                <div key={path.id} className="card-path">
+                    <h4 className="name-paths">{path.name}</h4>
+                    <h5 className=""> {path.directions} </h5><br/>
+                    <button className="delete" onClick={() => handleDelete(path.id)}>delete</button>
                 </div>
             )
         })}
-        </>
+        </div>
     )
 }
 

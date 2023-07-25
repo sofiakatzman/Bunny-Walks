@@ -10,6 +10,7 @@ import Paths from "./Paths"
 import CreatePath from "./CreatePath"
 import CreateBunny from "./CreateBunny"
 import CreateWalk from "./CreateWalk"
+import '../index.css'
 
 function App() {
   const [bunnies, setBunnies] = useState(null)
