@@ -38,6 +38,7 @@ def create_fake_walk():
     return walk
 
 def create_fake_bunny():
+
     name = fake.first_name()
     description = fake.sentence()
 
@@ -75,11 +76,31 @@ def generate_fake_data():
 
     db.session.commit()
 
+def generate_force_data():
+    # random path
+    path = Path(
+            id = 0,
+            name="Random",
+            directions="-",
+        )
+    
+    db.session.add(path)
+    
 
+    # random bunny
+    bunny = Bunny(
+        id=0,
+        name="Random Bunny",
+        description="-",
+        headshot="https://img.freepik.com/free-vector/hand-drawn-bunny-outline-illustration_23-2149265219.jpg?w=360",
+    )
+    db.session.add(bunny)
+    db.session.commit()
 if __name__ == '__main__':
     fake = Faker()
     with app.app_context():
         print("Starting seed...")
         delete_data()
         generate_fake_data()
+        generate_force_data()
         print("... seed complete")
