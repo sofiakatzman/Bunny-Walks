@@ -32,4 +32,4 @@ Bunny Walks is a web-based application, accessible through modern web browsers o
 If you encounter any issues while using Bunny Walks or have suggestions for improvements, please reach out to our support team at support@bunnywalksapp.com. We value your feedback and are committed to making your walking adventures enjoyable!
 
 ## Happy Tallying!
-Get ready to explore the outdoors, discover adorable bunnies, and have fun tracking your walking adventures with Bunny Walks! Enjoy your journey and happy tallying! 🐰🚶‍♂️🚶‍♀️
+Get ready to explore the outdoors, discover adorable bunnies, and have fun tracking your walking adventures with Bunny Walks! Enjoy your journey and happy tallying! <br/> 🐰🚶‍♂️🚶‍♀️
