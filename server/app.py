@@ -200,7 +200,7 @@ api.add_resource(Paths, '/api/paths/<int:path_id>/', endpoint="path_by_id")
 
 
 # front end react routes
-@app.route('/')
+@app.route('/home')
 @app.route("/walks")
 @app.route("/bunnies")
 @app.route("/paths")
