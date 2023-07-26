@@ -8,7 +8,6 @@ from config import db
 bunny_sightings = db.Table(
     'bunny_sightings', 
     db.Column('walk_id', db.Integer, db.ForeignKey('walks.id'), primary_key=True), 
-    db.Column('path_id', db.Integer, db.ForeignKey('paths.id'), primary_key=True),
     db.Column('bunny_id', db.Integer, db.ForeignKey('bunnies.id'), primary_key=True), 
 )
 
@@ -28,6 +27,9 @@ class Walk(db.Model, SerializerMixin):
     # example of a many to many relationship : many bunnies to many walks 
     bunnies = db.relationship('Bunny', secondary=bunny_sightings, backref='walks')
     
+    serialize_rules = (
+        '-bunnies',  
+    )
 
 # stores different bunnies that have been discovered 
 class Bunny(db.Model, SerializerMixin):
@@ -37,6 +39,9 @@ class Bunny(db.Model, SerializerMixin):
     name = db.Column(db.String)
     description = db.Column(db.String)
     headshot = db.Column(db.String)
+
+    
+
 
 # stores different paths to 
 class Path(db.Model, SerializerMixin):
