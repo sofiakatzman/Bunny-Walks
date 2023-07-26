@@ -27,24 +27,40 @@ class Walks(Resource):
 
     # add a walk 
     def post(self):
-        form_json = request.get_json()
-        new_walk = Walk(
-            date = form_json['date'],
-            start_time = form_json['start_time'],
-            end_time = form_json['end_time'],
-            bunny_count = form_json['bunny_count'],
-            walk_path = form_json['walk_path'],
-        )
+            form_json = request.get_json()
+            new_walk = Walk(
+                date=form_json['date'],
+                start_time=form_json['start_time'],
+                end_time=form_json['end_time'],
+                bunny_count=form_json['bunny_count'],
+                walk_path=form_json['walk_path'],
+            )
 
-        db.session.add(new_walk)
-        db.session.commit()
+            # Handle bunny sightings
+            bunny_sighting_ids = form_json.get('spotted_bunnies', [])
+            for bunny_id in bunny_sighting_ids:
+                bunny = Bunny.query.get(bunny_id)
+                if bunny:
+                    bunny.path_id = new_walk.walk_path
+                    new_walk.bunnies.append(bunny)
+                else:
+                    print(f"Bunny with ID {bunny_id} not found in the database")
 
-        response = make_response(
-            new_walk.to_dict(), 
-            201
-        )
+            db.session.add(new_walk)
+            db.session.commit()
 
-        return response
+            response_data = {
+                            "id": new_walk.id,
+                            "date": new_walk.date,
+                            "start_time": new_walk.start_time,
+                            "end_time": new_walk.end_time,
+                            "bunny_count": new_walk.bunny_count,
+                            "bunnies_seen": bunny_sighting_ids,
+                        }
+
+            response = make_response(response_data, 201)
+
+            return response
 
     # delete a walk - TBC
     def delete(self, walk_id):
