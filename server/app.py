@@ -3,17 +3,18 @@
 # Standard library imports
 
 # Remote library imports
-from flask import request, make_response
+from flask import request, make_response, render_template
 from flask_restful import Resource
 
 # Local imports
 from config import app, db, api
 from models import Walk, Bunny, Path
 
+
+from dotenv import load_dotenv
+
 # Views go here!
-@app.route("/")
-def index():
-    return "Welcome!"
+
 
 class Walks(Resource):
     # view all walks
@@ -197,5 +198,11 @@ class Paths(Resource):
 api.add_resource(Paths, '/paths/', endpoint="paths")
 api.add_resource(Paths, '/paths/<int:path_id>/', endpoint="path_by_id")
 
+@app.route('/')
+@app.route('/<int:id>')
+def index(id=0):
+    return render_template("index.html")
 if __name__ == '__main__':
-    app.run(port=5555, debug=True)
+    app.run(port=8000)
+
+

@@ -1,5 +1,7 @@
 # Standard library imports
-
+from dotenv import load_dotenv
+import os
+load_dotenv()
 # Remote library imports
 from flask import Flask
 from flask_cors import CORS
@@ -11,10 +13,17 @@ from sqlalchemy import MetaData
 # Local imports
 
 # Instantiate app, set attributes
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app = Flask(
+    __name__,
+    static_url_path="",
+    static_folder="../client/build",
+    template_folder="../client/build",
+)
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URI")
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.json.compact = False
+
+
 
 # Define metadata, instantiate db
 metadata = MetaData(naming_convention={
