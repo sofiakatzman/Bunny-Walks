@@ -155,7 +155,7 @@ button:hover {
 
 button.delete,
 button.edit, button.save {
-  display: none;
+  /* display: none; */
   position: absolute;
   background-color: #007bff;
   padding: 3px 6px;
