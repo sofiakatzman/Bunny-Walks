@@ -26,7 +26,7 @@ function App() {
       <Router>
         <Navigation />
         <Routes>
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/walks" element={<Walks />} />
           <Route path="/bunnies" element={<Bunnies bunnies={bunnies} setBunnies={setBunnies}/>} />
           <Route path="/paths" element={<Paths />} />
