@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react"
 import moment from "moment"
 import { useFormik } from 'formik'
 import * as yup from 'yup'
-import CreateBunny from "./CreateBunny"
 
 function CreateWalk({bunnies, setBunnies}) {
   // State variables

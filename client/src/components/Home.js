@@ -1,5 +1,4 @@
 import React from "react"
-import CreateWalk from "./CreateWalk"
 import { useNavigate } from "react-router-dom";
 
 function Home() {
