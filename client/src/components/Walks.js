@@ -5,14 +5,14 @@ function Walks(){
     const [walks, setWalks] = useState(null)
     
     useEffect(()=>{
-        fetch("/walks")
+        fetch("/api/walks")
         .then(r => r.json())
         .then(data =>setWalks(data))
     }, [])
 
 
     const handleDelete = (deleteID) => {
-        fetch(`/walks/${deleteID}`, {
+        fetch(`/api/walks/${deleteID}`, {
           method: "DELETE",
         })
           .then((response) => {

@@ -18,7 +18,7 @@ function CreateBunny(){
         },
         validationSchema: formSchema,
         onSubmit: (values) => {
-          fetch('/bunnies', {
+          fetch('/api/bunnies', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

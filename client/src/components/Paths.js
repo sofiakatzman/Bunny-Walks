@@ -4,14 +4,14 @@ function Paths(){
     const [paths, setPaths] = useState(null)
     
     useEffect(()=>{
-        fetch("/paths")
+        fetch("/api/paths")
         .then(r => r.json())
         .then(data =>{setPaths(data)})
 
     }, [])
 
     const handleDelete = (deleteID) => {
-        fetch(`/paths/${deleteID}`, {
+        fetch(`/api/paths/${deleteID}`, {
           method: "DELETE",
         })
           .then((response) => {

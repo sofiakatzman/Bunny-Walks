@@ -14,7 +14,7 @@ function CreatePath(){
         },
         validationSchema: formSchema,
         onSubmit: (values) => {
-          fetch('/paths', {
+          fetch('/api/paths', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

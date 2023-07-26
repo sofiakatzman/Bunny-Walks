@@ -54,7 +54,7 @@ function CreateWalk({bunnies, setBunnies}) {
       values.date = date
       values.spotted_bunnies = spottedBunnies
           
-      fetch('/walks', {
+      fetch('/api/walks', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -14,7 +14,7 @@ function Bunnies({ bunnies, setBunnies }) {
   }
 
   const handleSave = () => {
-    fetch(`/bunnies/${editedBunny.id}`, {
+    fetch(`/api/bunnies/${editedBunny.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -43,7 +43,7 @@ function Bunnies({ bunnies, setBunnies }) {
   }
 
   const handleDelete = (deleteID) => {
-    fetch(`/bunnies/${deleteID}`, {
+    fetch(`/api/bunnies/${deleteID}`, {
       method: "DELETE",
     })
       .then((response) => {

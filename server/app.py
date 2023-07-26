@@ -76,8 +76,8 @@ class Walks(Resource):
 
         return response
     
-api.add_resource(Walks, '/walks/', endpoint='walks')
-api.add_resource(Walks, '/walks/<int:walk_id>/', endpoint='walks_by_id')
+api.add_resource(Walks, '/api/walks/', endpoint='walks')
+api.add_resource(Walks, '/api/walks/<int:walk_id>/', endpoint='walks_by_id')
 
 class Bunnies(Resource):
     # view all bunnies
@@ -136,8 +136,8 @@ class Bunnies(Resource):
 
         return response
     
-api.add_resource(Bunnies, '/bunnies/', endpoint='bunnies')
-api.add_resource(Bunnies, '/bunnies/<int:bunny_id>/', endpoint='bunnies_by_id')
+api.add_resource(Bunnies, '/api/bunnies/', endpoint='bunnies')
+api.add_resource(Bunnies, '/api/bunnies/<int:bunny_id>/', endpoint='bunnies_by_id')
 
 class Paths(Resource):
     # view all paths
@@ -195,13 +195,22 @@ class Paths(Resource):
 
         return response
 
-api.add_resource(Paths, '/paths/', endpoint="paths")
-api.add_resource(Paths, '/paths/<int:path_id>/', endpoint="path_by_id")
+api.add_resource(Paths, '/api/paths/', endpoint="paths")
+api.add_resource(Paths, '/api/paths/<int:path_id>/', endpoint="path_by_id")
 
+
+# front end react routes
 @app.route('/')
-@app.route('/<int:id>')
+@app.route("/walks")
+@app.route("/bunnies")
+@app.route("/paths")
+@app.route("/create/bunny")
+@app.route("/create/path")
+@app.route("/create/walk")
 def index(id=0):
     return render_template("index.html")
+
+
 if __name__ == '__main__':
     app.run(port=8000)
 

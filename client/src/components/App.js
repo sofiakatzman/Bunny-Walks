@@ -16,7 +16,7 @@ function App() {
   const [bunnies, setBunnies] = useState(null)
 
   useEffect(() => {
-    fetch("/bunnies")
+    fetch("/api/bunnies")
       .then((r) => r.json())
       .then((data) => setBunnies(data))
   }, [])
