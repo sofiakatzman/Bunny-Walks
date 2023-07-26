@@ -11,16 +11,16 @@ Welcome to Bunny Walks! This application allows you to keep track of your walkin
 ## How to Use
 Starting a Walk:
 - Click on the "Start Walk" button to begin a new walk. <br/> Enjoy your walk, and whenever you spot a bunny, click on it to add it to your bunny count.
-- Adding a Random Bunny: <br/>
-If you encounter a bunny that you haven't seen before, click on the "Random Bunny" button.
+Adding a Random Bunny: 
+- If you encounter a bunny that you haven't seen before, click on the "Random Bunny" button. <br/>
 Later, you can provide more information and create a profile for it.
 
-- Completing the Walk:
-When you've finished your walk, select the path you took from the available options or choose "Random" if it was an undefined path.
+Completing the Walk:
+- When you've finished your walk, select the path you took from the available options or choose "Random" if it was an undefined path. <br/>
 Click on the "Save Walk" button to store your walk details and bunny tally in your walk history.
-Viewing Walk History:
 
-To view your past walks and bunny tallies, click on 'Walks' in the navigation bar.
+Viewing Walk History:
+- To view your past walks and bunny tallies, click on 'Walks' in the navigation bar. <br/>
 You can see a list of all your previous walks along with the date, time, path, and bunny count for each walk.
 
 ## System Requirements
