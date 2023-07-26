@@ -135,7 +135,7 @@ class Bunnies(Resource):
 
         return response
     
-api.add_resource(Bunnies, '/bunnies', endpoint='bunnies')
+api.add_resource(Bunnies, '/bunnies/', endpoint='bunnies')
 api.add_resource(Bunnies, '/bunnies/<int:bunny_id>/', endpoint='bunnies_by_id')
 
 class Paths(Resource):
@@ -194,7 +194,7 @@ class Paths(Resource):
 
         return response
 
-api.add_resource(Paths, '/paths', endpoint="paths")
+api.add_resource(Paths, '/paths/', endpoint="paths")
 api.add_resource(Paths, '/paths/<int:path_id>/', endpoint="path_by_id")
 
 if __name__ == '__main__':
