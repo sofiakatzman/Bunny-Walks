@@ -164,11 +164,6 @@ button.edit, button.save {
   cursor: pointer;
 }
 
-.card-bunnies:hover button.delete,
-.card-bunnies:hover button.edit, 
-.card-bunnies:hover button.save {
-  display: block;
-}
 
 /* Navbar styles */
 .navbar {
