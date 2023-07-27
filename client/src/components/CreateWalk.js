@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react"
 import moment from "moment"
 import { useFormik } from 'formik'
 import * as yup from 'yup'
-import { useNavigate } from "react-router-dom"
 
 function CreateWalk({bunnies, setBunnies}) {
   // State variables
@@ -14,7 +13,6 @@ function CreateWalk({bunnies, setBunnies}) {
   const [spottedBunnies, setSpottedBunnies] = useState([])
 
   const [savedWalk, setSavedWalk] = useState(null)
-  const navigate = useNavigate()
   
   useEffect(() => {
     fetch("/api/paths")
