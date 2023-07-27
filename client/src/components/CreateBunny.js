@@ -1,9 +1,11 @@
 import React from "react"
 import { useFormik } from 'formik'
 import * as yup from 'yup'
+import { useNavigate } from "react-router-dom"
 
 function CreateBunny(){
-
+  const navigate = useNavigate()
+  
     const formSchema = yup.object().shape({
         name: yup.string().required('You must enter a name.'),
         description: yup.string().required('You must enter a description.'),
@@ -28,6 +30,7 @@ function CreateBunny(){
             if (res.ok) {
               res.json().then((response) => {
                 console.log(response)
+                navigate('/')
               })
             }
           })

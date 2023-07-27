@@ -34,7 +34,7 @@ function Paths(){
                 <div key={path.id} className="card-path">
                     <h4 className="name-paths">{path.name}</h4>
                     <h5 className=""> {path.directions} </h5><br/>
-                    <button className="delete" onClick={() => handleDelete(path.id)}>delete</button>
+                    <button onClick={() => handleDelete(path.id)}>delete</button>
                 </div>
             )
         })}

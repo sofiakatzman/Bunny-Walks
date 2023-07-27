@@ -63,7 +63,7 @@ function Bunnies({ bunnies, setBunnies }) {
 
   return (
     <div className="container-bunnies">
-      Saved Bunnies
+      Saved Bunnies 
       {bunnies &&
         bunnies.map((bunny) => (
           <div key={bunny.id} className="card-bunnies">
@@ -89,17 +89,17 @@ function Bunnies({ bunnies, setBunnies }) {
                     }))
                   }
                 />
-                <button className="save" onClick={handleSave}>Save</button>
+                <button onClick={handleSave}>save</button>
               </>
             ) : (
               <>
                 <h1 className="name-bunnies">{bunny.name}</h1>
                 <h5 className="description-bunnies">{bunny.description}</h5>
-                <button className="edit" onClick={() => handleEdit(bunny)}>
-                  Edit
+                <button  onClick={() => handleEdit(bunny)}>
+                  edit 
                 </button>
-                <button className="delete" onClick={() => handleDelete(bunny.id)}>
-                  Delete
+                <button  onClick={() => handleDelete(bunny.id)}>
+                  delete 
                 </button>
               </>
             )}

@@ -1,8 +1,10 @@
 import React from "react"
 import { useFormik } from 'formik'
 import * as yup from 'yup'
+import { useNavigate } from "react-router-dom"
 
 function CreatePath(){
+    const navigate = useNavigate()
     const formSchema = yup.object().shape({
         name: yup.string().required('You must enter a name.'),
       })
@@ -24,6 +26,7 @@ function CreatePath(){
             if (res.ok) {
               res.json().then((response) => {
                 console.log(response)
+                navigate('/')
               })
             }
           })
