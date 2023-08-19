@@ -34,9 +34,9 @@ function CreatePath(){
       })
 
     return(
-        <div className="container"><br/><br/>
-        new path!
-        <br/>
+        <div className="container">
+        <h5 className="flush-left">Create a Path</h5>
+    
         <form onSubmit={formik.handleSubmit}>
             <input
                 type = "text"

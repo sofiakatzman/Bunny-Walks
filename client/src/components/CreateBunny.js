@@ -9,14 +9,14 @@ function CreateBunny(){
     const formSchema = yup.object().shape({
         name: yup.string().required('You must enter a name.'),
         description: yup.string().required('You must enter a description.'),
-        headshot: yup.string().required('You must enter a headshot url.')
+       
       })
     
       const formik = useFormik({
         initialValues: {
           name: '',
           description: '',
-          headshot: ''
+          headshot: 'https://i.ibb.co/yPtwkYk/bunni.png'
         },
         validationSchema: formSchema,
         onSubmit: (values) => {
@@ -38,8 +38,8 @@ function CreateBunny(){
       })
 
     return(
-        <div className="container"><br/>
-        new bunny!
+        <div className="container">
+        <h5 className="flush-left">New Bunny!</h5>
         <form onSubmit={formik.handleSubmit}>
             <input
                 type = "text"
@@ -55,13 +55,7 @@ function CreateBunny(){
                 value = {formik.values.description}
                 onChange = {formik.handleChange}
             /> <br/>
-            <input
-                type = "text"
-                name = "headshot"
-                placeholder = "bunny photo url"
-                value = {formik.values.headshot}
-                onChange = {formik.handleChange}
-            /> <br/><br/>
+            <br/>
             <button type="submit">save</button>
         </form>
         {formik.errors && (

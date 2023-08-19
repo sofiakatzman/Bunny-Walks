@@ -28,17 +28,18 @@ function Paths(){
       }
 
     return(
+        <><h5 className="flush-left">Saved Paths</h5>
         <div className="container-paths">
         {paths && paths.map(path=> {
             return(
                 <div key={path.id} className="card-path">
-                    <h4 className="name-paths">{path.name}</h4>
-                    <h5 className=""> {path.directions} </h5><br/>
-                    <button onClick={() => handleDelete(path.id)}>delete</button>
+                    <h5 className="name-paths">{path.name}</h5>
+                    <p className=""> {path.directions} </p><br/>
+                    <button onClick={() => handleDelete(path.id)}>delete</button><br/>
                 </div>
             )
         })}
-        </div>
+        </div></>
     )
 }
 

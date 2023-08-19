@@ -95,15 +95,18 @@ function CreateWalk({bunnies, setBunnies}) {
   if(!walk && savedWalk){
     console.log(savedWalk)
     return(
+      <>
+      <br/><br/>
       <div className="walk-card"> 
       <h1>Walk added!</h1>
       <p>Bunnies Spotted: {savedWalk.bunny_count}</p>
       <p>Time Started: {savedWalk.start_time}</p>
       <p>Time Ended: {savedWalk.end_time}</p>
+      <br/>
 
-
-      <button onClick={()=>setSavedWalk(null)}>exit</button>
+      <button onClick={()=>setSavedWalk(null)}>exit</button> <br/>
       </div>
+      </>
     )
   }
 
@@ -120,27 +123,29 @@ function CreateWalk({bunnies, setBunnies}) {
   // Display when a walk has been started
   return (
     <div className="new-walk"> <br/>
-      <h2 >{count} bunnies seen!</h2>
+      
+      <p>click on any of these bunnies when you see them to add them to the tally! <br/>
+
+        spot a new bunny? use the "random bunny" button and add them later! 
+        </p>
     
     {bunnies && <div className="container-seen-bunnies">
         
         
-        <p>click on any of these bunnies when you see them to add them to the tally! <br/>
-
-        spot a new bunny? use the "random bunny" button!       
-        </p>
+        
+      
         {bunnies.map(bunny => {
             return(
                 //will need to add css to this so they show very small 
                 <div className="card-bunnies-seen" key={`bunny${bunny.id}`} onClick={() => handleAddBunny(bunny.id)}>
                   <img className="card-bunnies-image-seen" src={bunny.headshot} alt={`Headshot of ${bunny.name}`} />
                   <h5 className="name-bunnies-seen">{bunny.name}</h5>
-  
                 </div>
             )
         })}
           
         </div>}
+        <h2 >{count} bunnies seen!</h2>
           
    
       <p>walk date: {date} <br/>
@@ -170,7 +175,7 @@ function CreateWalk({bunnies, setBunnies}) {
           </div>
         )}
         <br/>
-        <button type="submit">save walk</button>
+        <button type="submit">save walk</button><br/><br/>
       </form>
     </div>
   )

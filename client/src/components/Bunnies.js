@@ -62,16 +62,17 @@ function Bunnies({ bunnies, setBunnies }) {
   }
 
   return (
+    <><h5 className="flush-left">Saved Bunnies</h5>
     <div className="container-bunnies">
-      Saved Bunnies 
+      
       {bunnies &&
         bunnies.map((bunny) => (
           <div key={bunny.id} className="card-bunnies">
-            <img
+            {/* <img
               className="card-bunnies-image"
               src={bunny.headshot}
               alt={`Headshot of ${bunny.name}`}
-            />
+            /> */}
             {editMode === bunny.id ? (
               <>
                 <input
@@ -93,19 +94,20 @@ function Bunnies({ bunnies, setBunnies }) {
               </>
             ) : (
               <>
-                <h1 className="name-bunnies">{bunny.name}</h1>
-                <h5 className="description-bunnies">{bunny.description}</h5>
+                <h5 className="name-bunnies">{bunny.name}</h5>
+                <p className="description-bunnies">{bunny.description}</p>
                 <button  onClick={() => handleEdit(bunny)}>
                   edit 
                 </button>
                 <button  onClick={() => handleDelete(bunny.id)}>
                   delete 
-                </button>
+                </button><br/>
               </>
             )}
           </div>
         ))}
     </div>
+    </>
   )
 }
 

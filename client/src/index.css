@@ -1,130 +1,96 @@
 /* Global styles */
 body {
-  margin: 20px; 
+  margin: 10px;
   font-family: 'Open Sans', sans-serif;
   background-color: #ebe6e3;
   color: #222;
-  padding-top: 80px;
+  padding-top: 5px;
+  text-align: center
 }
 
 /* Container styles */
-
-.container{
+.container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 10px 5px; 
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 40px; 
-  justify-items: center;
-  align-items: center;
-}
-.container-bunnies {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 10px 5px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
+  padding: 10px;
+  /* display: grid; */
+  /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+  gap: 20px;
   justify-items: center;
   align-items: center;
 }
 
-.container-walks{
+.container-bunnies,
+.container-walks,
+.container-paths,
+.container-seen-bunnies {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 10px 100px; 
+  padding: 10px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  gap: 30px 1pc; 
+  gap: 20px;
   justify-items: center;
   align-items: center;
 }
 
+.container-bunnies,
+.container-seen-bunnies {
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(45%, 1fr)); /* Adjust column width and min width */
 
-.container-paths{
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 10px 100px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  gap: 30px 1pc;
-  justify-items: center;
-  align-items: center;
 }
 
 
 /* Card styles */
 .card,
-.card-path, .card-walks {
+.card-path,
+.card-walks,
+.card-bunnies,
+.card-bunnies-seen,
+.walk-card {
   display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   width: 90%;
-  height: 100px;
   background: #f9f9f9;
   border-radius: 15px;
   box-shadow: 1px 5px 30px rgba(150, 148, 190, 0.4);
   animation: slideIn 0.5s ease-in-out;
   transition: box-shadow 0.2s ease;
   padding: 5px;
+  margin-bottom: 20px;
 }
 
-
-.card:hover {
-  box-shadow: 0 0 0 1px #33373c;
+.card-bunnies,
+.card-walks,
+.card-paths {
+  width: 100%;
 }
-
-.card span,
-.card-path span {
-  font-weight: 600;
-  color: #222;
-  font-size: 16px;
-}
-
-.card p,
-.card-path p {
-  color: #444;
-  font-size: 12px;
-  padding-top: 3px;
-}
-
-img {
-  display: block;
-  margin: 10px auto;
-  width: 80px; 
-  height: 80px; 
-  padding-top: 10px;
-}
-
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-  color: #222;
+.card-bunnies-seen {
   padding-top: 15px;
 }
 
+/* Headings */
 h1 {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-h2 {
   font-size: 18px;
 }
 
-h3 {
+h2 {
   font-size: 16px;
 }
 
-h4 {
+h3 {
   font-size: 14px;
+}
+
+h4 {
+  font-size: 12px;
 }
 
 /* Paragraphs */
 p {
-  font-size: 14px;
+  font-size: 10px;
   line-height: 1.6;
   color: #444;
 }
@@ -137,227 +103,113 @@ a {
 
 /* Buttons */
 button {
-  text-align: center;
-  background-color: #007bff;
-  border: none;
-  text-decoration: none;
-  color: #fff;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 14px;
+  font-size: 10px;
   padding: 8px 16px;
-  border-radius: 4px;
+  border-radius: 15px;
 }
-
-button:hover {
-  background-color: #0056b3;
-}
-
-button.delete,
-button.edit, button.save {
-  /* display: none; */
-  position: absolute;
-  background-color: #007bff;
-  padding: 3px 6px;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
 
 /* Navbar styles */
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: #f9f9f9;
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.links {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  padding: 10px;
+  text-align: left;
 }
 
 .links a {
-  font-size: 16px;
-  margin-left: 20px;
-  color: #007bff;
-  text-decoration: none;
-}
-
-.links a:hover {
-  color: #0056b3;
+  font-size: 10px;
+  margin-left: 10px;
 }
 
 /* Additional styling for the form elements */
-input, textarea, select {
+input,
+textarea,
+select {
   font-family: 'Open Sans', sans-serif;
-}
-
-
-.card-bunnies {
-  width: 190px;
-  height: 340px;
-  background: white;
-  padding: .4em;
-  border-radius: 6px;
-}
-
-.card-bunnies-image {
   width: 100%;
-  height: 60%;
-  border-radius: 6px 6px 0 0;
 }
 
-.card-bunnies-image:hover {
-  transform: scale(0.98);
-}
-
-.name-bunnies {
-  text-transform: uppercase;
-  font-size: 0.7em;
-  font-weight: 600;
-  color: rgb(63, 121, 230);
-  padding: 10px 7px 0;
-}
-
-.description-bunnies {
-  font-weight: 600;
-  color: rgb(88, 87, 87);
-  padding: 7px;
-}
-
-
-.card-walks {
-  width: 500px;
-  height: 150px;
-  background: white;
-  padding: .4em;
-  border-radius: 6px;
-}
-
-.card-walks-image {
-  width: 100%;
-  height: 60%;
-  border-radius: 6px 6px 0 0;
-}
-
-.card-walks-image:hover {
-  transform: scale(0.98);
-}
-
-.name-walks {
-  text-transform: uppercase;
-  font-size: 0.7em;
-  font-weight: 600;
-  color: rgb(63, 121, 230);
-  padding: 10px 7px 0;
-}
-
-
-.description-walks {
-  font-weight: 600;
-  font-size: 0.7em;
-  color: rgb(88, 87, 87);
-  padding: 7px;
-}
-
-h1.count-walks{
-  font-weight: 600;
-  font-size: 1em;
-  color: rgb(88, 87, 87);
-  padding: 7px;
-}
-
-.name-paths {
-  text-transform: uppercase;
-  font-size: 0.7em;
-  font-weight: 600;
-  color: rgb(63, 121, 230);
-  padding: 10px 7px 0;
-}
-
-.description-paths {
-  font-weight: 600;
-  color: rgb(88, 87, 87);
-  padding: 7px;
-}
-
-.card-paths {
-  width: 500px;
-  height: 200px;
-  background: white;
-  padding: .4em;
-  border-radius: 6px;
-}
-
-
-
-.container-seen-bunnies {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 10px 10px 10px; 
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px; 
-  justify-items: center;
-  align-items: center;
-}
-
-
-.card-bunnies-seen {
-  width: 150px;
-  height: 150px;
-  background: white;
-  padding: .4em;
-  border-radius: 6px;
-}
-
+/* Adjustments for specific card styles */
+.card-bunnies-image,
+.card-walks-image,
 .card-bunnies-image-seen {
-  width: 50%;
-  height: 50%;
+  width: 30%;
+  height: 60%;
   border-radius: 6px 6px 0 0;
 }
 
 .card-bunnies-image-seen:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
 }
 
-.name-bunnies-seen {
-  text-transform: uppercase;
-  font-size: 0.7em;
-  font-weight: 600;
-  color: rgb(63, 121, 230);
-  padding: 10px 7px 0;
-  text-align: center;
+.flush-left {
+  text-align: left;
+  margin-left: 5px;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease-in-out;
 }
 
-span.home, p.home{
- padding-left: 400px;
+/* Style for the input fields */
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease-in-out;
 }
 
-.walk-card {
-  align-items: center;
-  width: 500px;
-  height: 200px;
-  background: white;
-  padding: .4em;
-  border-radius: 6px;
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -150%);
+/* Style for the focused input fields */
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+  border-color: #666;
+  outline: none;
 }
 
+/* Style for the buttons */
+button {
+  font-size: 10px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
 
-div.new-walk {
-  text-align: center;
+button:hover {
+  background-color: #ccc;
+  border-color: #999;
+}
+
+/* Media query for small screens (e.g., mobile phones) */
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 5px;
+  }
+
+  .card-bunnies-image-seen:hover {
+    transform: scale(1);
+  }
+
+  .navbar {
+    padding: 8px;
+  }
+
+  .links a {
+    font-size: 12px;
+    margin-left: 5px;
+  }
+
 }
