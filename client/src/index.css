@@ -157,7 +157,7 @@ input[type="text"] {
 
 /* Style for the input fields */
 input[type="text"],
-textarea,
+textarea, input,
 select {
   width: 100%;
   padding: 10px;
@@ -181,7 +181,7 @@ select:focus {
 button {
   font-size: 10px;
   padding: 8px 16px;
-  border-radius: 4px;
+  border-radius: 15px;
   background-color: #f9f9f9;
   border: 2px solid #ccc;
   cursor: pointer;

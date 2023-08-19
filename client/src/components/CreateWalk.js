@@ -174,8 +174,8 @@ function CreateWalk({bunnies, setBunnies}) {
             </ul>
           </div>
         )}
-        <br/>
-        <button type="submit">save walk</button><br/><br/>
+   
+        <button type="submit">save walk</button><br/><br/><br/>
       </form>
     </div>
   )
